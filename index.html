@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Centinelas | Regional Mexicano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">LOS CENTINELAS</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#musica">Música</a></li>
+            <li><a href="#tour">Gira 2024</a></li>
+            <li><a href="#contacto" class="btn-nav">Contrataciones</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in">
+            <h1>REGIONAL <span class="gold-text">MEXICANO</span></h1>
+            <p>La nueva escuela del regional mexicano.</p>
+            <div class="hero-btns">
+                <a href="#musica" class="btn btn-primary"><i class="fas fa-play"></i> Escuchar Ahora</a>
+                <a href="#tour" class="btn btn-outline">Ver Fechas</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="musica" class="section-dark">
+        <div class="container">
+            <h2 class="section-title">Nuestros <span class="gold-text">Éxitos</span></h2>
+            
+            <div class="album-grid">
+                <div class="music-card scroll-reveal">
+                    
+                    <div class="card-image-placeholder">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>El Patrón del Valle</h3>
+                        <p>Los Centinelas ft. Grupo X</p>
+                        <button class="play-btn" onclick="playMusic(this)">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="music-card scroll-reveal">
+                     
+                    <div class="card-image-placeholder">
+                        <i class="fas fa-guitar"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Noches de Blindaje</h3>
+                        <p>Los Centinelas</p>
+                        <button class="play-btn" onclick="playMusic(this)">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="music-card scroll-reveal">
+                    <div class="card-image-placeholder">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Oro y Pólvora</h3>
+                        <p>Los Centinelas</p>
+                        <button class="play-btn" onclick="playMusic(this)">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tour" class="section-black">
+        <div class="container">
+            <h2 class="section-title">Próximas <span class="gold-text">Fechas</span></h2>
+            <div class="tour-list">
+                <div class="tour-item scroll-reveal">
+                    <div class="date">
+                        <span class="day">12</span>
+                        <span class="month">OCT</span>
+                    </div>
+                    <div class="location">
+                        <h3>Palenque Feria Ganadera</h3>
+                        <p>Culiacán, Sinaloa</p>
+                    </div>
+                    <a href="#" class="btn btn-small">Boletos</a>
+                </div>
+
+                <div class="tour-item scroll-reveal">
+                    <div class="date">
+                        <span class="day">28</span>
+                        <span class="month">OCT</span>
+                    </div>
+                    <div class="location">
+                        <h3>Auditorio Telmex</h3>
+                        <p>Guadalajara, Jalisco</p>
+                    </div>
+                    <a href="#" class="btn btn-small">Boletos</a>
+                </div>
+
+                <div class="tour-item scroll-reveal">
+                    <div class="date">
+                        <span class="day">05</span>
+                        <span class="month">NOV</span>
+                    </div>
+                    <div class="location">
+                        <h3>Arena Monterrey</h3>
+                        <p>Monterrey, Nuevo León</p>
+                    </div>
+                    <a href="#" class="btn btn-small">Sold Out</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>LOS CENTINELAS</h2>
+                <p>Contrataciones directas y prensa.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-spotify"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-form">
+                <h3>Contacto</h3>
+                <form>
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="email" placeholder="Correo" required>
+                    <textarea placeholder="Mensaje / Detalles del evento"></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Los Centinelas del Norte. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
