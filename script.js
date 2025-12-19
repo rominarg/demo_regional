@@ -2,7 +2,35 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Efecto Scroll Header
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times'); 
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars'); 
+            }
+        });
+    }
+
+        const menuLinks = document.querySelectorAll('.nav-links a'); 
+        
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -14,28 +42,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. Animaciones al hacer Scroll (Intersection Observer)
+
     const revealElements = document.querySelectorAll('.scroll-reveal');
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Solo animar una vez
+                observer.unobserve(entry.target); 
             }
         });
     }, {
         root: null,
-        threshold: 0.15 // Dispara cuando el 15% del elemento es visible
+        threshold: 0.15 
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // 3. Simulación de Reproductor de Música
     window.playMusic = function(btn) {
         const icon = btn.querySelector('i');
         
-        // Resetear otros botones (para este demo simple)
         document.querySelectorAll('.play-btn i').forEach(i => {
             if(i !== icon) {
                 i.classList.remove('fa-pause');
@@ -45,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Toggle Play/Pause visual
         if (icon.classList.contains('fa-play')) {
             icon.classList.remove('fa-play');
             icon.classList.add('fa-pause');
